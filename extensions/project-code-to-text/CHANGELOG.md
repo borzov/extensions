@@ -9,6 +9,13 @@
 - Preview statistics showing estimated file size and token count before generation
 - Results screen after successful generation with file information and quick actions
 
+### Fixed
+- Fixed memory issues (JS heap out of memory) by optimizing string concatenation and reducing safety limits
+- Improved memory efficiency by using array-based string building instead of string concatenation
+- Reduced default safety limits (MAX_FILES: 5000 → 3000, MAX_TOTAL_SIZE_BYTES: 100MB → 50MB) to prevent memory exhaustion
+- Added better error messages for memory-related failures with suggestions to use .gitignore or select fewer files
+- Added garbage collection trigger after output generation (when available)
+
 ### Improved
 - File picker now supports selecting both files and directories simultaneously
 - Multiple Finder selection handling for better UI feedback
